@@ -1,7 +1,5 @@
 # Shadowrocket RU — TOP config
 
-Маршрутизация для РФ:
-
 | Трафик | Действие |
 |--------|----------|
 | Реклама / трекеры | `REJECT-DROP` |
@@ -10,16 +8,22 @@
 | Российские сервисы / `.ru` / GeoIP RU | `DIRECT` |
 | Остальное | `PROXY` |
 
-**Источники списков (обновляются ежедневно у авторов):**
-- [Master-Yoba/shadowrocket-rules](https://github.com/Master-Yoba/shadowrocket-rules) — ru-blocked, category-ru, geoip-ru
-- [sub-kek/shadowrocket-lists](https://github.com/sub-kek/shadowrocket-lists) — category-ads-all
+Списки: [Master-Yoba](https://github.com/Master-Yoba/shadowrocket-rules) + ads из [sub-kek](https://github.com/sub-kek/shadowrocket-lists).
 
-## Импорт в Shadowrocket
+## Импорт (актуальная ссылка)
 
 ```
-https://raw.githubusercontent.com/encipher88/shadowrocket-ru-rules/main/russia.conf
+https://raw.githubusercontent.com/encipher88/shadowrocket-ru-rules/main/russia-top.conf
 ```
 
-Config → `+` → URL → Download → Use Config → на Home выбери свой прокси.
+### Если на iPad «не обновляется»
+
+1. Shadowrocket → **Конфигурация**
+2. Свайп влево по старому конфигу → **Удалить** (или не используй его)
+3. **+** → вставь ссылку выше / сканируй QR → Download
+4. Тап по новому конфигу → **Использовать конфигурацию**
+5. Дождись загрузки RULE-SET (Wi‑Fi), потом включи VPN на вкладке Home
+
+Не жми только «обновить» у старого файла — часто остаётся кэш. Нужен **новый download**.
 
 Репозиторий должен быть **публичным**.
