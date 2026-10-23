@@ -1,17 +1,25 @@
-# Shadowrocket RU rules
+# Shadowrocket RU — TOP config
 
-Конфиг для Shadowrocket: **РФ → DIRECT**, **заблокированное и зарубежное → PROXY**.
+Маршрутизация для РФ:
 
-Списки RULE-SET берутся с [Master-Yoba/shadowrocket-rules](https://github.com/Master-Yoba/shadowrocket-rules) (ежедневное обновление из runetfreedom).
+| Трафик | Действие |
+|--------|----------|
+| Реклама / трекеры | `REJECT-DROP` |
+| LAN / private | `DIRECT` |
+| Заблокированное в РФ | `PROXY` |
+| Российские сервисы / `.ru` / GeoIP RU | `DIRECT` |
+| Остальное | `PROXY` |
 
-## Импорт
+**Источники списков (обновляются ежедневно у авторов):**
+- [Master-Yoba/shadowrocket-rules](https://github.com/Master-Yoba/shadowrocket-rules) — ru-blocked, category-ru, geoip-ru
+- [sub-kek/shadowrocket-lists](https://github.com/sub-kek/shadowrocket-lists) — category-ads-all
+
+## Импорт в Shadowrocket
 
 ```
 https://raw.githubusercontent.com/encipher88/shadowrocket-ru-rules/main/russia.conf
 ```
 
-Или QR / Shadowrocket → Config → `+` → URL.
+Config → `+` → URL → Download → Use Config → на Home выбери свой прокси.
 
-## Важно
-
-Репозиторий должен быть **публичным**, иначе Shadowrocket не скачает конфиг и RULE-SET.
+Репозиторий должен быть **публичным**.
